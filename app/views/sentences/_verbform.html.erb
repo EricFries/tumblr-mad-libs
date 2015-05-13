@@ -1,0 +1,28 @@
+
+<%= form_tag (sentences_path) do %>
+
+	<% if @adjective_positions.length > 1 %>
+		<%= label_tag 'adjs',"Choose #{@adjective_positions.length}Adjectives" %><br>
+	<% else %>
+		<%= label_tag 'adjs',"Choose #{@adjective_positions.length} Adjective" %><br>
+	<% end %>
+
+	<% @adjective_positions.length.times do %>
+		<%= text_field_tag :adjs %><br>
+	<% end %>
+	<br>
+
+	<% if @verb_positions.length > 1 %>
+		<%= label_tag 'verbs', "Choose #{@verb_positions.length} Verbs" %><br>
+	<% else %>
+		<%= label_tag 'verbs', "Choose #{@verb_positions.length} Verb" %><br>
+	<% end %>
+
+	<% @verb_positions.length.times do %>
+		<%= text_field_tag :adjs %><br>
+	<% end %>
+
+	<br>
+	<%= hidden_field_tag 'id', @sentence.id %>
+	<%= submit_tag "Play TumblrMadLibs" %>
+<% end %>

@@ -55,9 +55,9 @@ group :test, :development do
 end
 
 group :production do
-  gem 'pg'
+
   gem 'google-analytics-rails'
   gem 'rails_12factor'
 end
-
+  gem 'pg'
 gem 'bootstrap-sass', '~> 3.1.1'

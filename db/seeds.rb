@@ -265,6 +265,7 @@ has_adjective_sentences.each do |sentence, adj_index_pair|
 end
 
 final_hash.each do |sentence,indices|
+  binding.pry
   Sentence.create(:content => sentence, :adjectives => indices[:adjective_index], :verbs => indices[:verb_index])
 end
 

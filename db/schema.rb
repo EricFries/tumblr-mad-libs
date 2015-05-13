@@ -13,10 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20150513160239) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "sentences", force: :cascade do |t|
     t.string "content"
-    t.string "verbs"
-    t.string "adjectives"
+    t.string "verbs",      default: [], array: true
+    t.string "adjectives", default: [], array: true
   end
 
 end
