@@ -2,7 +2,7 @@
 <%= form_tag (modifiedsentences_path) do %>
 
 	<% if @adjective_positions.length > 1 %>
-		<%= label_tag 'adjs',"Choose #{@adjective_positions.length}Adjectives" %><br>
+		<%= label_tag 'adjs',"Choose #{@adjective_positions.length} Adjectives" %><br>
 	<% else %>
 		<%= label_tag 'adjs',"Choose #{@adjective_positions.length} Adjective" %><br>
 	<% end %>

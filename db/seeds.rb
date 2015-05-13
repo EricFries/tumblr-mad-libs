@@ -6,107 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-common_adjectives = [
-"other",
-"new",
-"good",
-"high",
-"old",
-"great",
-"big",
-"American",
-"small",
-"large",
-"national",
-"young",
-"different",
-"black",
-"long",
-"little",
-"important",
-"political",
-"bad",
-"white",
-"real",
-"best",
-"right",
-"social",
-"only",
-"public",
-"sure",
-"low",
-"early",
-"able",
-"human",
-"local",
-"late",
-"hard",
-"major",
-"better",
-"economic",
-"strong",
-"possible",
-"whole",
-"free",
-"military",
-"true",
-"federal",
-"international",
-"full",
-"special",
-"easy",
-"clear",
-"recent",
-"certain",
-"personal",
-"open",
-"red",
-"difficult",
-"available",
-"likely",
-"short",
-"single",
-"medical",
-"current",
-"wrong",
-"private",
-"past",
-"foreign",
-"fine",
-"common",
-"poor",
-"natural",
-"significant",
-"similar",
-"hot",
-"dead",
-"central",
-"happy",
-"serious",
-"ready",
-"simple",
-"left",
-"physical",
-"general",
-"environmental",
-"financial",
-"blue",
-"democratic",
-"dark",
-"various",
-"entire",
-"close",
-"legal",
-"religious",
-"cold",
-"final",
-"main",
-"green",
-"nice",
-"huge",
-"popular",
-"traditional",
-"cultural"]
+
+
+common_adjectives = 
+["other", "new", "good", "high", "old", "great", "big", "American", "small", "large", "national", "young", "different", "black", "long", "little", "important", "political", "bad", "white", "real", "best", "right", "social", "only", "public", "sure", "low", "early", "able", "human", "local", "late", "hard", "major", "better", "economic", "strong", "possible", "whole", "free", "military", "true", "federal", "international", "full", "special", "easy", "clear", "recent", "certain", "personal", "open", "red", "difficult", "available", "likely", "short", "single", "medical", "current", "wrong", "private", "past", "foreign", "fine", "common", "poor", "natural", "significant", "similar", "hot", "dead", "central", "happy", "serious", "ready", "simple", "left", "physical", "general", "environmental", "financial", "blue", "democratic", "dark", "various", "entire", "close", "legal", "religious", "cold", "final", "main", "green", "nice", "huge", "popular", "traditional", "cultural", "used", "every", "basic", "known", "several", "united", "historical", "useful", "mental", "scared", "additional", "emotional", "healthy", "actual", "successful", "electrical", "expensive", "pregnant", "intelligent", "interesting", "responsible", "cute", "helpful", "willing", "wonderful", "impossible", "rare", "technical", "typical", "competitive", "critical", "electronic", "immediate", "aware", "educational", "global", "relevant", "accurate", "capable", "dangerous", "dramatic", "efficient", "powerful", "hungry", "practical", "psychological", "severe", "suitable", "numerous", "sufficient", "unusual", "consistent", "existing", "famous", "pure", "afraid", "obvious", "careful", "latter", "obviously", "unhappy", "acceptable", "aggressive", "boring", "distinct", "eastern", "logical", "reasonable", "strict", "successfully", "administrative", "automatic", "civil", "former", "massive", "southern", "unfair", "visible", "alive", "angry", "desperate", "exciting", "friendly", "lucky", "realistic", "sorry", "ugly", "unlikely", "anxious", "comprehensive", "curious", "impressive", "informal", "inner", "pleasant", "sexual", "sudden", "terrible", "unable", "weak", "wooden", "asleep", "confident", "conscious", "decent", "embarrassed", "guilty", "lonely", "mad", "nervous", "odd", "remarkable", "substantial", "suspicious", "tall", "tiny", "more", "some", "one", "all", "many", "most", "such", "even", "just", "any", "each", "much", "own", "another", "same", "few", "still", "both", "specific", "enough", "less", "next", "particular", "least", "last", "individual", "potential", "professional", "lower", "according", "alternative", "working", "true", "dry", "commercial", "primary", "worth", "necessary", "positive", "present", "creative", "fit", "glad", "proper", "complex", "content", "due", "effective", "middle", "regular", "fast", "independent", "original", "wide", "beautiful", "complete", "active", "negative", "safe", "visual", "ago", "quick", "straight", "direct", "excellent", "extra", "junior", "pretty", "unique"]
+
 
 common_verbs = [
 "be", 
@@ -217,8 +121,9 @@ client = Tumblr::Client.new({
 :oauth_token => 'HyLoX4CgHxP0tTqQ6VoDcMD2LvADTpdVGs8LuzCq4XUy46YHqK',
 :oauth_token_secret => 'K99Z7H2C2Wskcj1meEpr32GcLQLWgk6tQ7HrZNyuc0tQ62Ep6e'
 })
+# roxanegay.tumblr.com
 
-data = client.posts('roxanegay.tumblr.com')
+data = client.posts('thats-sus.tumblr.com')
 #returns an array of just posts
 
 raw_sentences = data["posts"].collect do |post|
@@ -265,8 +170,6 @@ has_adjective_sentences.each do |sentence, adj_index_pair|
 end
 
 final_hash.each do |sentence,indices|
-  binding.pry
   Sentence.create(:content => sentence, :adjectives => indices[:adjective_index], :verbs => indices[:verb_index])
 end
-
-
+binding.pry
