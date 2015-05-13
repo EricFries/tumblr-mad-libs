@@ -1,0 +1,12 @@
+<h3>"<%= @modifiedsentence.content %>"</h3>
+
+<h4>Original Tumblr Sentence:</h4>
+<p><%= @sentence.content %></p>
+
+<h4>Recent TumblrMadLibs From This Sentence:</h4>
+<ul>
+<% @sentence.modifiedsentences.limit(5).each do |modifiedsentence| %>
+<% binding.pry %>
+<li><%= modifiedsentence.content %></li>
+<% end %>
+</ul>

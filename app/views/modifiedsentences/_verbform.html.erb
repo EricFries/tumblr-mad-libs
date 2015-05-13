@@ -1,5 +1,5 @@
 
-<%= form_tag (sentences_path) do %>
+<%= form_tag (modifiedsentences_path) do %>
 
 	<% if @adjective_positions.length > 1 %>
 		<%= label_tag 'adjs',"Choose #{@adjective_positions.length}Adjectives" %><br>
@@ -8,7 +8,7 @@
 	<% end %>
 
 	<% @adjective_positions.length.times do %>
-		<%= text_field_tag :adjs %><br>
+		<%= text_field_tag "adjs[]" %><br>
 	<% end %>
 	<br>
 
@@ -19,10 +19,10 @@
 	<% end %>
 
 	<% @verb_positions.length.times do %>
-		<%= text_field_tag :adjs %><br>
+		<%= text_field_tag "verbs[]" %><br>
 	<% end %>
 
 	<br>
-	<%= hidden_field_tag 'id', @sentence.id %>
+	<%= hidden_field_tag 'sentence_id', @sentence.id %>
 	<%= submit_tag "Play TumblrMadLibs" %>
 <% end %>
