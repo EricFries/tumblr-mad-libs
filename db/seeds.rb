@@ -115,10 +115,10 @@ common_verbs = [
 "choose"]
 
 
+# thats-sus.tumblr.com
+# 
 
-# roxanegay.tumblr.com
-
-data = CLIENT.posts('thats-sus.tumblr.com')
+data = CLIENT.posts('roxanegay.tumblr.com')
 #returns an array of just posts
 
 raw_sentences = data["posts"].collect do |post|
