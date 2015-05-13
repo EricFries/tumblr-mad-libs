@@ -115,15 +115,10 @@ common_verbs = [
 "choose"]
 
 
-client = Tumblr::Client.new({
-:consumer_key => 'tLlOafQrAZN5yVAGO8blB9ECMQ6SDPPoDLVqPpDo7Kh1L4uDpd',
-:consumer_secret => 'DZA34WR0adt4KvAKJWAK2hK0NgtdsSi1MKFT5Zlw1bP7lq9gSa',
-:oauth_token => 'HyLoX4CgHxP0tTqQ6VoDcMD2LvADTpdVGs8LuzCq4XUy46YHqK',
-:oauth_token_secret => 'K99Z7H2C2Wskcj1meEpr32GcLQLWgk6tQ7HrZNyuc0tQ62Ep6e'
-})
+
 # roxanegay.tumblr.com
 
-data = client.posts('thats-sus.tumblr.com')
+data = CLIENT.posts('thats-sus.tumblr.com')
 #returns an array of just posts
 
 raw_sentences = data["posts"].collect do |post|
