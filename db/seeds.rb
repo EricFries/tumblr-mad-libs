@@ -167,4 +167,4 @@ end
 final_hash.each do |sentence,indices|
   Sentence.create(:content => sentence, :adjectives => indices[:adjective_index], :verbs => indices[:verb_index])
 end
-binding.pry
+# binding.pry
